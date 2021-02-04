@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>ChatCord App</title>
+</head>
+<body>
+    <header class="container-fluid d-flex justify-content-center">
+        <div class="container-fluid clearfix">
+            <div class="float-left row">
+                <h3 id="room-name"></h3>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">접속자</button>
+                <div class="dropdown-menu" id="users"></div>
+            </div>
+            <div class="float-right row">
+                <button type="button" class="btn btn-danger">&times;</button>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid body-content d-flex justify-content-center">
+        <div class="chat-messages" onscroll="loadMoreChat()"></div>
+    </div>
+    <footer class="container-fluid d-flex justify-content-center">        
+        <textarea id="msg" rows="4" placeholder="Enter Message" autocomplete="off" required></textarea>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
