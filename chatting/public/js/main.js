@@ -13,6 +13,8 @@ const room = param_room.split('=')[1];
 
 const socket = io();
 
+
+//어떻게 해야 할 지 모르겠다
 //Show previousMessage
 socket.emit('previousMessage', {username, room});
 
