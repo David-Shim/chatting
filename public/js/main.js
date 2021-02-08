@@ -7,11 +7,17 @@ const params = window.location.search.split('?')[1];
 const distingush_url = params.split('&');
 const param_username = distingush_url[0];
 const param_room = distingush_url[1];
+
+function visualization(test){
+    test = decodeURIComponent(test);
+    test = test.replace(/\+/gi, " ");
+    return test;
+}
+
 const originusername = param_username.split('=')[1].trim();
-const plusIncluded = decodeURIComponent(originusername);
-const username = plusIncluded.replace(/\+/gi, " ");
-const originroomname = param_room.split('=')[1];
-const room = decodeURIComponent(originroomname);
+const username = visualization(originusername);
+const originroomname = param_room.split('=')[1].trim();
+const room = visualization(originroomname);
 
 const socket = io();
 
