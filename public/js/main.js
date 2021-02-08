@@ -7,8 +7,9 @@ const params = window.location.search.split('?')[1];
 const distingush_url = params.split('&');
 const param_username = distingush_url[0];
 const param_room = distingush_url[1];
-const originusername = param_username.split('=')[1];
-const username = decodeURIComponent(originusername);
+const originusername = param_username.split('=')[1].trim();
+const plusIncluded = decodeURIComponent(originusername);
+const username = plusIncluded.replace(/\+/gi, " ");
 const originroomname = param_room.split('=')[1];
 const room = decodeURIComponent(originroomname);
 
